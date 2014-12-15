@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      >
+    <ui:composition> 
+    <h:head>
+       <title>Add Supplier</title>
+       
+    </h:head>
+    
+    <h:body>
+        <p:dialog id="SuppliersCreateDlg" widgetVar="SupplierCreateDilog" resizable="false" appendTo="@(body)" >
+          
+        <h:form id="SupplierCreateForm">
+            <p:panelGrid columns="1">
+                
+                <p:inputText id="name" placeholder="enter supplier Name" size="80"  value="#{projectView.supplier.name}"/>
+                <p:inputText id="location" placeholder="enter supplier Location" size="80"  value="#{projectView.supplier.location}"/>
+                <p:inputText id="demand" placeholder="enter supplier Demand" size="80" value="#{projectView.supplier.demand}" />
+          <p:commandButton value="addSupplier" action="#{projectView.onAddSupplier()}"/>
+          
+                    <p:commandButton value="Cancel" onclick="SupplierCreateDilog.hide()"/>
+            </p:panelGrid>
+            
+        </h:form>
+        </p:dialog>
+    </h:body>
+        </ui:composition>
+</html>
+

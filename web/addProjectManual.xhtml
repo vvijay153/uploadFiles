@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/template.xhtml">
+    <h:head>
+         <title>project Information</title>
+       
+    </h:head>
+        <ui:define name="body">
+                      
+
+                    <p:fieldset legend="Add Project">
+                        <p:panelGrid columns="2">
+                           
+                            <p:outputLabel value="Name of Project"/>
+                            <p:inputText  placeholder="Enter Project Name"/>
+                                            
+
+                            <p:commandButton value="Add supplier" icon="ui-icon-extlink" update=":SupplierCreateForm"  oncomplete="PF('SupplierCreateDilog').show()" >
+                             </p:commandButton> 
+                                                     
+<p:commandButton value="Add customer" icon="ui-icon-extlink" update=":CustomerCreateForm" oncomplete="PF('CustomerCreateDilog').show()" >
+                            </p:commandButton>
+                     
+
+          <p:commandButton value="Upload Supplier" icon="ui-icon-extlink" update=":UploadSupplier" oncomplete="PF('UploadSupplierDilog').show()" >
+                            </p:commandButton>              
+                                              </p:panelGrid>
+                    </p:fieldset>                   
+
+                    <p:commandButton value="Register" >
+                    </p:commandButton>
+                             
+       
+         <ui:include src="AddSupplierForm.xhtml"/>
+         <ui:include src="AddCustomer.xhtml"/>
+         <ui:include src="UploadSupplier.xhtml"/>
+    </ui:define>
+        </ui:composition>
+</html>
+
